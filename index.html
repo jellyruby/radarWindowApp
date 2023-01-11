@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My App</title>
+    </head>
+    <script>
+         const makeGif = () => {
+
+            console.log('test');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:3000/makegif');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                }
+            };
+            xhr.send();
+        }
+    </script>
+    <body>
+        <h1>레이더 돚거하기</h1>
+        <button onclick="makeGif()">getBtn</button>
+    </body>
+</html>
